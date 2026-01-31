@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri Shield | Analysis Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">🌿 Agri Shield</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/scanner">Scanner</a>
+                <a href="/about">Mission</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="result-container">
+
+        <div class="result-header">
+            <h1>Analysis Complete</h1>
+            <p>Here is what our AI detected from your sample.</p>
+        </div>
+
+        <div class="result-grid">
+            <!-- Left Column: Image -->
+            <div class="result-image-card">
+                <div class="image-wrapper">
+                    <img src="{{ image_url }}" alt="Uploaded Plant Leaf">
+                </div>
+                <div class="confidence-badge">
+                    <i class="fas fa-bullseye"></i> Confidence: <strong>{{ confidence }}</strong>
+                </div>
+            </div>
+
+            <!-- Right Column: Details -->
+            <div class="result-details-card">
+                <h2 class="disease-title">{{ disease_name }}</h2>
+
+                <div class="details-section">
+                    <h3><i class="fas fa-info-circle"></i> Description</h3>
+                    <p>{{ description }}</p>
+                </div>
+
+                <div class="details-section">
+                    <h3><i class="fas fa-user-md"></i> Recommended Treatments</h3>
+                    <div class="treatment-content">
+                        {{ treatments | safe }}
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <a href="/scanner" class="btn-main"><i class="fas fa-redo"></i> Analyze Another Sample</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Agri Shield. Built for the Hackathon.</p>
+    </footer>
+
+</body>
+
+</html>

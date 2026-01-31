@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri Shield| Plant Disease Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">🌿 Agri Shield</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/scanner" class="active">Scanner</a>
+                <a href="/about">Mission</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hud-container">
+            <div class="scan-line" id="scanLine"></div>
+
+            <div class="hud-text" id="hudText">
+                <h1>AI Ready.</h1>
+                <p>System initializing...<br>Waiting for organic sample.</p>
+            </div>
+
+            <img id="preview-img" alt="Leaf Preview">
+        </div>
+
+        <div class="glass-card">
+            <h2>Upload Sample</h2>
+            <p style="color: #64748b; margin-bottom: 20px;">Upload a clear photo of the affected leaf.</p>
+
+
+            <form id="uploadForm" action="/identify" method="POST" enctype="multipart/form-data">
+                <div class="drop-zone" id="dropZone">
+                    <span class="icon-upload">📁</span>
+                    <p>Drag & Drop or <strong>Click to Browse</strong></p>
+                    <input type="file" id="fileInput" name="image" hidden accept="image/*">
+                </div>
+
+                <button type="submit" class="btn-main" id="submitBtn">Analyze Sample</button>
+            </form>
+
+
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay">
+        <div class="loader"></div>
+        <div class="loading-text">Analyzing Sample</div>
+        <div class="loading-subtext">Consulting AI Knowledge Base...</div>
+    </div>
+
+</body>
+
+</html>

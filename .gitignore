@@ -1,0 +1,19 @@
+
+# Secrets
+.env
+**/.env
+
+# Dependencies & Environments
+venv/
+.venv/
+v/
+__pycache__/
+*.pyc
+
+# Uploads
+static/uploads/
+**/static/uploads/
+
+# IDE
+.vscode/
+.idea/
